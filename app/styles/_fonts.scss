@@ -1,0 +1,13 @@
+@mixin font-face($name, $file, $weight: 400, $style: normal) {
+  @font-face {
+    font-family: '#{$name}';
+    src: local('#{$file}.ttf');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+@include font-face("Poppins", "Poppins-Regular", 400);
+@include font-face("Poppins", "Poppins-Medium", 500);
+@include font-face("Poppins", "Poppins-SemiBold", 600);

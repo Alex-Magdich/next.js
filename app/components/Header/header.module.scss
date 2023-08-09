@@ -1,0 +1,141 @@
+@import "../../styles/variables";
+
+.header{
+}
+
+.headerInner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  @include w(1200px){
+    .navigation{
+      display: none;
+    }
+    .additionalItems{
+      display: none;
+    }
+    .burger{
+      display: block;
+    }
+  }
+}
+
+.burger{
+  width: 50px;
+  display: none;
+  position: relative;
+  height: 30px;
+
+  &:before,
+  &:after {
+    background: $black;
+    backface-visibility: hidden;
+    content: "";
+    height: 2px;
+    right: 0;
+    transition: 0.75s;
+    width: 50px;
+  }
+
+  &:before {
+    box-shadow: $black 0 14px 0 0;
+    position: absolute;
+    top: 0;
+  }
+
+  &:after {
+    position: absolute;
+    width: 50%;
+    top: calc(100% - 2px);
+  }
+
+}
+.clicked{
+  &:before,
+  &:after {
+    background: $white;
+  }
+  &:before {
+    box-shadow: transparent 0 0 0 0;
+    top: 50%;
+    transform: rotate(225deg);
+  }
+  &:after {
+    top: 50%;
+    width: 100%;
+    transform: rotate(315deg);
+  }
+}
+
+.headerLogo{
+  width: 120px;
+  height: 30px;
+}
+
+.navigation{
+  display: flex;
+  gap: 0 45px;
+}
+.opened{
+  display: flex!important;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  padding: 20px;
+  flex-direction: column;
+  background: $black;
+  color: $white;
+}
+.navigationItem{
+  position: relative;
+  a{
+    display: flex;
+    align-items: center;
+    height: 30px;
+  }
+  &:hover{
+    .navigationItemAdditionalMenu{
+      display: flex;
+    }
+  }
+}
+
+.navigationItemActive{
+  font-weight: 600;
+}
+
+.navigationItemAdditionalMenu{
+  display: none;
+  position: absolute;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0px 0px 60px 30px rgba(0, 0, 0, 0.03);
+  padding: 10px;
+  flex-direction: column;
+  gap: 10px 0;
+  white-space: nowrap;
+}
+
+.additionalItems{
+  display: flex;
+  gap: 0 35px;
+}
+
+.additionalItem{
+  border-radius: 50%;
+  border: 1px solid rgba($black, .75);
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  svg{
+    width: 18px;
+    height: 18px;
+  }
+  &:hover{
+    background-color: $black;
+    color: $white;
+  }
+}

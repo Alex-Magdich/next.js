@@ -1,0 +1,67 @@
+@import "../../styles/variables";
+
+.footer{
+  background-color: $black;
+  color: $white;
+  padding: 80px 0 60px;
+}
+
+.footerLogo{
+  margin: 0 auto 45px;
+  display: block;
+  width: 180px;
+  height: 45px;
+}
+
+.footerContacts{
+  flex: 0 1 320px;
+  @include w($sm){
+    a{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}
+
+.footerContent{
+  padding: 30px 0 0;
+  border-top: 1px solid $white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0 25px;
+  @include w($md){
+    div{
+      flex: 0 0 calc(50% - 25px);
+    }
+    gap: 30px 25px;
+    .newsletterForm{
+      flex: 1 1 300px;
+    }
+  }
+  h4{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+  ul{
+    display: flex;
+    flex-direction: column;
+    gap: 24px 0;
+  }
+  a{
+    transition: .3s;
+    &:hover{
+      opacity: .7;
+    }
+  }
+}
+
+.newsletterForm{
+  padding: 14px;
+  border-radius: 10px;
+  background: #131313;
+  height: 180px;
+  flex: 0 1 300px;
+}

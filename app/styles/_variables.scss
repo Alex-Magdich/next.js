@@ -1,0 +1,38 @@
+$black: #000;
+$dark: #1B1B1B;
+$white: #fff;
+$light-grey: #FBFBFB;
+$grey: #C9C9C9;
+$grey2: #8D8D8D;
+$dark-grey: #717171;
+
+$font-sizes:(
+  'xs': 14px,
+  'sm': 16px,
+  'lg': 18px,
+  'xl': 28px,
+  '2xl': 40px,
+);
+
+$offsets:(
+  '10': 10px,
+  'base': 20px,
+  '30': 30px,
+  'base2x': 40px,
+  'lg': 50px,
+);
+
+$md: 1200px;
+$sm: 768px;
+
+@mixin w($size, $sizeMin: 0px) {
+  @if ($sizeMin == 0) {
+    @media (max-width: ($size - 0.02)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $sizeMin) and (max-width: ($size - 0.02)) {
+      @content;
+    }
+  }
+}

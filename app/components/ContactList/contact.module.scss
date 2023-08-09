@@ -1,0 +1,13 @@
+.contactItem{
+  display: flex;
+  gap: 10px 25px;
+  align-items: center;
+  transition: .2s;
+  svg{
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+  &:hover{
+    opacity: .7;
+  }
+}
