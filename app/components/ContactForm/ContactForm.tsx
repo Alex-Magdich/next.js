@@ -20,31 +20,29 @@ const CHECKBOXES = [
 ]
 
 
-const ContactForm = () => {
-    return (
-        <div className='contact-form'>
-            {INPUTS.map(item => (
-                <Input key={item.label} label={item.label}/>
+const ContactForm = () => (
+    <div className='contact-form'>
+        {INPUTS.map(item => (
+            <Input key={item.label} label={item.label}/>
+        ))}
+        <div className={styles.checkboxesContainer}>
+            <div>Select Subject?</div>
+            {CHECKBOXES.map(item => (
+                <Checkbox key={item.label} label={item.label}/>
             ))}
-            <div className={styles.checkboxesContainer}>
-                <div>Select Subject?</div>
-                {CHECKBOXES.map(item => (
-                    <Checkbox key={item.label} label={item.label}/>
-                ))}
-            </div>
-            <Textarea label='Message'/>
-            <div className={styles.formButtonContainer}>
-                <button className='button'>Send Message</button>
-                <Image
-                    src="/letter_send.png"
-                    alt="Send letter"
-                    width={266}
-                    height={217}
-                    priority
-                />
-            </div>
         </div>
-    );
-};
+        <Textarea label='Message'/>
+        <div className={styles.formButtonContainer}>
+            <button className='button'>Send Message</button>
+            <Image
+                src="/letter_send.png"
+                alt="Send letter"
+                width={266}
+                height={217}
+                priority
+            />
+        </div>
+    </div>
+)
 
 export default ContactForm;

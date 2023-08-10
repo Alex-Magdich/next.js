@@ -4,13 +4,11 @@ export type TProps = {
     label: string;
 }
 
-const Input:React.FC<TProps> = ({label}) => {
-    return (
-        <label className='input-control'>
-            <span>{label}</span>
-            <textarea placeholder='Write your message...'/>
-        </label>
-    );
-};
+const Input:React.FC<TProps> = ({label}) => (
+    <label className='input-control'>
+        <span>{label}</span>
+        <textarea placeholder='Write your message...'/>
+    </label>
+)
 
 export default Input;

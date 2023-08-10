@@ -9,14 +9,12 @@ const CONTACT_DATA = [
     {Icon: <Map/>, type: '', value: '132 Dartmouth Street Boston, Massachusetts 02156 United States'}
 ]
 
-export const ContactList = () => {
-    return (
-        <ul>
-            {CONTACT_DATA.map(item => (
-                <li key={item.value}>
-                    <ContactItem type={item.type} Icon={item.Icon} text={item.value}/>
-                </li>
-            ))}
-        </ul>
-    )
-}
+export const ContactList = () => (
+    <ul>
+        {CONTACT_DATA.map(item => (
+            <li key={item.value}>
+                <ContactItem type={item.type} Icon={item.Icon} text={item.value}/>
+            </li>
+        ))}
+    </ul>
+)
